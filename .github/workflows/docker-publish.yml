@@ -25,3 +25,5 @@ jobs:
           context: .
           push: true
           tags: ghemy/aws-web-app:latest
+      
+      
