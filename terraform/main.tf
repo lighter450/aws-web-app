@@ -10,9 +10,9 @@ data "aws_vpc" "default" {
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-0c7217cdde317cfec" # Ubuntu 22.04 для us-east-1
+  ami           = "ami-0c7217cdde317cfec" 
   instance_type = "t2.micro"
-  key_name      = "keylab1"               # заміни на назву свого .pem ключа
+  key_name      = "keylab1"              
   
   tags = {
     Name = "Terraform-WebApp"
@@ -22,7 +22,7 @@ resource "aws_instance" "web" {
 }
 
 resource "aws_security_group" "web_sg" {
-  name        = "web-sg-unique"
+  name        = "web-sg"
   description = "Allow HTTP"
   vpc_id      = data.aws_vpc.default.id
   
